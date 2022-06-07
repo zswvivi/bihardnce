@@ -1,2 +1,2 @@
 # Bihardnce
-This repository holds the code of model (Bi-directional Hard-Negative Noise Contrastive Estimation) in our KDD 2022 paper.
+This repository holds the code of our proposed model in KDD 2022 paper (Medical Symptom Detection in Intelligent Pre-Consultation using Bi-directional Hard-Negative Noise Contrastive Estimation).
