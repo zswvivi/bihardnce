@@ -10,5 +10,5 @@ This repository holds the source code for our KDD 2022 paper titled:
 # Pre-training
 python downlond_chinese_bert.py 
 
-# training
+# Training
 sh bihdnce.sh
