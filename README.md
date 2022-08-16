@@ -1,4 +1,8 @@
-# Bihardnce
-This repository holds the code of our proposed model in KDD 2022 paper (Medical Symptom Detection in Intelligent Pre-Consultation using Bi-directional Hard-Negative Noise Contrastive Estimation).
 
-Code is coming soon~~
+This repository holds the source code for our KDD 2022 paper titled: 
+# Medical Symptom Detection in Intelligent Pre-Consultation using Bi-directional Hard-Negative Noise Contrastive Estimation 
+[Paper](https://dl.acm.org/doi/pdf/10.1145/3534678.3539124)
+
+# Requirements
+- python3.6
+- pip install -r requirements.txt
