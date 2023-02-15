@@ -7,7 +7,7 @@ This repository holds the source code for our KDD 2022 paper titled:
 - python3.6
 - pip install -r requirements.txt
 
-# Pre-training
+# Downloading Chinese Bert
 python downlond_chinese_bert.py 
 
 # Training
