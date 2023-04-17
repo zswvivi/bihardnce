@@ -20,7 +20,7 @@ In the following section, we describe how to train a SimCSE model by using our c
 
 ### Downloading Chinese Bert
 ```bash
-python downlond_chinese_bert.py 
+python download_chinese_bert.py 
 ```
  
 ### 
