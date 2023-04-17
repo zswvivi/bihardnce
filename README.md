@@ -10,14 +10,38 @@ Our approach to symptom detection in medical queries within intelligent pre-cons
 
 ![](img/sym.png)
 
-## Getting Started
+
+### Train Bi-hardNCE
+In the following section, we describe how to train a SimCSE model by using our code.
 
 ### Requirements
 - python3.6
 - pip install -r requirements.txt
 
 ### Downloading Chinese Bert
+```bash
 python downlond_chinese_bert.py 
-
-### Training
+```
+ 
+### 
+```bash
 sh bihdnce.sh
+```
+
+### Evaluation
+
+
+## Citation
+
+Please cite our paper if you use Bi-hardNCE in your work:
+
+```bibtex
+@inproceedings{zhang2022medical,
+  title={Medical Symptom Detection in Intelligent Pre-Consultation using Bi-directional Hard-Negative Noise Contrastive Estimation},
+  author={Zhang, Shiwei and Sun, Jichao and Huang, Yu and Ding, Xueqi and Zheng, Yefeng},
+  booktitle={Proceedings of the 28th ACM SIGKDD Conference on Knowledge Discovery and Data Mining},
+  pages={4551--4559},
+  year={2022}
+}
+```
+
