@@ -1,6 +1,6 @@
 # Medical Symptom Detection in Intelligent Pre-Consultation using Bi-directional Hard-Negative Noise Contrastive Estimation 
 
-This repository holds the source code for our KDD 2022 paper titled: [Paper](https://dl.acm.org/doi/pdf/10.1145/3534678.3539124)
+This repository holds the source code for our KDD 2022 [paper](https://dl.acm.org/doi/pdf/10.1145/3534678.3539124)
 
 <!-- Thanks for your interest in our repo! -->
 
