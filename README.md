@@ -23,13 +23,18 @@ In the following section, we describe how to train a SimCSE model by using our c
 python download_chinese_bert.py 
 ```
  
-### 
+### Training
+
+The training process for Bi-hardNCE differs slightly from traditional deep learning training. After each epoch, the model performs a prediction on the validation data to adjust the threshold for hard-negative mining. It then includes new hard negatives for each training instance.
+
 ```bash
 sh bihdnce.sh
 ```
 
 ### Evaluation
-
+```bash
+python Evaluation.py
+```
 
 ## Citation
 
