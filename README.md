@@ -12,7 +12,7 @@ Our approach to symptom detection in medical queries within intelligent pre-cons
 
 
 ### Train Bi-hardNCE
-In the following section, we describe how to train a SimCSE model by using our code.
+In the following section, we describe how to train a Bi-hardNCE model by using our code.
 
 ### Requirements
 - python3.6
