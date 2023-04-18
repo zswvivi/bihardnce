@@ -54,6 +54,8 @@ if __name__=='__main__':
     predictions = pred_sets.copy()
     true_sets = np.array([create_true_sets(item) for item in true_sets])
     pred_sets = np.array([create_pred_sets(item) for item in pred_sets])
+
+    # Calculate and print the ndcg score for the predicted sets
     ndcg = str(round(cal_ndcg(true_sets, pred_sets, topk = 5),4)*100)
     print('ndcg: ', ndcg)
     
@@ -62,11 +64,13 @@ if __name__=='__main__':
     predictions = [[item[0] for item in sublist] for sublist in predictions]
     true_set = [set(item) for item in golden_labels]
     pre_set = [set(item) for item in predictions]
-    recall = str(cal_set_micro_f1(true_set, pre_set))
-    print(recall)
+
+    # Calculate the micro f1 score for the predicted sets and print it
+    micro_f1 = str(cal_set_micro_f1(true_set, pre_set))
+    print(micro_f1)
 
     result_save_path = 'results/'+sys.argv[1]+'_re.txt' #+model_name.replace("models/", "")+"_re.txt"
     textfile = open(result_save_path, "a")
     textfile.write('ndcg: '+ ndcg+ "\n")
-    textfile.write(recall+ "\n")
+    textfile.write(micro_f1 + "\n")
     textfile.close()
