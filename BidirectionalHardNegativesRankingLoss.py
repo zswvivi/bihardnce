@@ -1,4 +1,4 @@
-# This Python script is the our loss function
+# This Python script is our loss function
 
 import torch
 from torch import nn, Tensor
