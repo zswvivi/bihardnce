@@ -10,6 +10,10 @@ Our approach to symptom detection in medical queries within intelligent pre-cons
 
 ![](img/sym.png)
 
+The Intelligent pre-consultation (IPC) system is a pre-diagnosis tool designed to enhance the efficiency and productivity of healthcare delivery. It replicates the logic of medical diagnosis, allowing for the collection of patient information in advance, thus reducing the need for doctors to interact with patients, resulting in time-saving. By utilizing the generated medical report from IPC, doctors can reduce the time spent on writing medical records. IPC can assist doctors in making efficient clinical decisions while simultaneously improving their diagnostic capabilities. This pre-diagnosis system, such as IPC, can aid doctors in providing a more effective and efficient diagnosis by collecting patient information on a mobile device. The IPC framework includes key components like a basic information collector, intention classifier, symptom detector, and medical record generator, as shown in the figure below. Patients enter their basic information and queries, which are processed by a medical intent classifier to identify their intentions, such as health check-ups, follow-up consultations, or describing symptoms. If the patient's queries relate to describing symptoms, the symptom detector identifies the mentioned symptoms, and IPC asks related questions for each symptom, culminating in the generation of a medical report.
+
+![](img/ipc.png)
+
 
 ### Train Bi-hardNCE
 In the following section, we describe how to train a Bi-hardNCE model by using our code.
