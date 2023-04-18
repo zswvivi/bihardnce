@@ -1,4 +1,5 @@
 # This Python file uses the following encoding: utf-8
+# This Python script is the ranking model for ranking symptoms for a given query.
 
 import os
 from sentence_transformers import SentenceTransformer, util
@@ -10,7 +11,13 @@ import statistics
 class Candidate_Ranker(object):
     
     def __init__(self, model_path = 'models'):
- 
+        """
+        Initializes the candidate ranker object.
+    
+        Args:
+        model_path (str): Path to the trained model.
+        """
+	
         self.candidates_path = 'data/candidates'
         with open (self.candidates_path, 'rb') as fp:
                 self.candidates = pickle.load(fp)
@@ -26,9 +33,20 @@ class Candidate_Ranker(object):
         self.candidates_embeddings = self.bi_encoder.encode(self.candidates, convert_to_tensor=True, device ='cuda')
         self.queries_embeddings = self.bi_encoder.encode(self.queries, convert_to_tensor=True, device ='cuda')
         
-    # This function will search all standard symptoms for querys that
-    # match the query
+    # This function will search all standard symptoms for queries that match the query
     def search_candidates(self, query, top_k = 5, return_scores= False, threshold = 0):
+        """
+        Returns a list of the top_k candidate symptoms that match the input query.
+
+        Args:
+        query (str): Input query string.
+        top_k (int): Number of top results to return.
+        return_scores (bool): If true, returns scores of each candidate along with its name.
+        threshold (float): Minimum score threshold for a candidate to be considered a match.
+
+        Returns:
+        A list of candidate symptoms that match the input query.
+        """
         question_embedding = self.bi_encoder.encode(query, convert_to_tensor=True, device ='cuda')
         hits = util.semantic_search(question_embedding, self.candidates_embeddings, top_k = top_k)
         hits = hits[0]
@@ -44,6 +62,21 @@ class Candidate_Ranker(object):
         return indices[:k]
 
     def search_hard_negatives(self, anchor = 'query', query = None, true_candidate = None, sampling_method = 'topK', positive_threshold = 0.5, beta = 1,num_negatives = 1):
+        """
+        Finds hard negative candidates to be used for training.
+
+        Args:
+        anchor (str): Whether to anchor the search to the 'query' or 'candidate'.
+        query (str): Input query string.
+        true_candidate (str): The correct symptom candidate.
+        sampling_method (str): The method to use for sampling hard negative candidates.
+        positive_threshold (float): Minimum threshold for a candidate to be considered a positive match.
+        beta (float): Threshold for beta-negative examples (used in certain sampling methods).
+        num_negatives (int): Number of negative candidates to return.
+
+        Returns:
+        A list of hard negative symptom candidates for training.
+        """
                                    
         if anchor == 'query':
            query_embeddings = self.bi_encoder.encode(query, convert_to_tensor=True, device ='cuda')
