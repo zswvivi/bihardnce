@@ -1,15 +1,20 @@
+
 import pandas as pd
 import pickle
 from evaluation_metrics import *
 from candidate_ranker import Candidate_Ranker
 import sys
 
+# Set path to the candidates data
 candidates_path = 'data/candidates'
+
+# Load the candidates data
 with open (candidates_path, 'rb') as fp:
         candidates = pickle.load(fp)
 print(len(candidates))
     
-    
+   
+# Define a function to create true sets from a list of items 
 def create_true_sets(items):
     vec = [0]*len(candidates)
     for item in items:
@@ -17,13 +22,13 @@ def create_true_sets(items):
             vec[candidates.index(item)] = 1
     return vec
 
+# Define a function to create prediction sets from a list of items
 def create_pred_sets(items):
     vec = [0]*len(candidates)
     for item in items:
         if item[0] in candidates:
             vec[candidates.index(item[0])] = item[1]
     return vec
-
 
 if __name__=='__main__':
 
