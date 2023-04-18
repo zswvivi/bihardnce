@@ -25,7 +25,7 @@ python download_chinese_bert.py
  
 ### Training
 
-The training process for Bi-hardNCE differs slightly from traditional deep learning training. After each epoch, the model performs a prediction on the validation data to adjust the threshold for hard-negative mining. It then includes new hard negatives for each training instance.
+In comparison to the traditional deep learning training, the training process for Bi-hardNCE varies slightly. Following each epoch, the model evaluates the validation data to modify the threshold for hard-negative mining. Subsequently, the model performs hard-negative mining on the training data and adds fresh hard negatives for each training instance.
 
 ```bash
 sh bihdnce.sh
